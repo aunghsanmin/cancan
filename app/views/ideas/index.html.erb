@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-9">
+    <h1 class="idea-title">GALLERY</h1>
+  </div>
+  <div class="col-md-3 text-right">
+    <%= link_to 'Add New-Foto', new_idea_path, {:class=> "btn btn-primary"} %>
+  </div>
+  <% @ideas.each do |idea| %>
+    <div class="col-md-4">
+      <div class="gallery-item">
+        <div class="thumbnail-cus">
+          <div class="img-container">
+            <%= link_to image_tag(idea.picture, :size =>"300", border:"1"), idea %>
+          </div>
+        </div>
+        <div class="name"><%= link_to idea.name, idea %></div>
+        <div class="desc"><%= idea.description %><%= link_to ' Readmore...', idea %></div>
+        <div class="control">
+          <%= link_to 'Edit', edit_idea_path(idea) %> <%= link_to 'Delete', idea, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
