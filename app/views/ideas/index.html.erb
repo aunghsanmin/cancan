@@ -6,6 +6,7 @@
   </div>
   <div class="col-md-3 text-right">
     <%= link_to 'Add New-Foto', new_idea_path, {:class=> "btn btn-primary"} %>
+    <%= link_to "Posts", '/posts', {:class=> "btn btn-primary"}  %>
   </div>
   <% @ideas.each do |idea| %>
     <div class="col-md-4">
